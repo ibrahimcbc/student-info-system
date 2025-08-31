@@ -10,7 +10,6 @@ import java.math.BigDecimal;
 @Entity
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 @Table(name="enrollments",
         uniqueConstraints=@UniqueConstraint(columnNames={"student_id","course_id","term_id"}))
 public class Enrollment {
@@ -35,4 +34,9 @@ public class Enrollment {
     @Column(name="included_in_gpa", nullable=false)
     private Boolean includedInGpa = Boolean.TRUE;
 
+    public Enrollment(Student student, Course course, Term term) {
+        this.student = student;
+        this.course = course;
+        this.term = term;
+    }
 }

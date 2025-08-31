@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 @Table(name = "terms",
 uniqueConstraints = @UniqueConstraint(columnNames = {"year","season"}))
 public class Term {
@@ -22,4 +21,9 @@ public class Term {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 10)
     private Season season;
+
+    public Term(Integer year, Season season) {
+        this.year = year;
+        this.season = season;
+    }
 }

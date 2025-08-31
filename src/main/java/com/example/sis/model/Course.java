@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 @Table(name="courses",
         uniqueConstraints=@UniqueConstraint(columnNames={"course_subject","course_code"}))
 public class Course {
@@ -29,4 +28,11 @@ public class Course {
 
     @Transient
     public String getDisplayCode(){ return courseSubject + " " + courseCode; }
+
+    public Course(String courseSubject, String courseCode, String title, Integer units) {
+        this.courseSubject = courseSubject;
+        this.courseCode = courseCode;
+        this.title = title;
+        this.units = units;
+    }
 }

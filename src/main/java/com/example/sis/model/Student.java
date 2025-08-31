@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 @Entity @Table(name="students")
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 public class Student {
     @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
@@ -18,5 +17,12 @@ public class Student {
 
     @Column(name="class_year")
     private Integer classYear;   // kaçıncı sınıf
+
+
+    public Student(String name, String surname, Integer classYear) {
+        this.name = name;
+        this.surname = surname;
+        this.classYear = classYear;
+    }
 
 }
