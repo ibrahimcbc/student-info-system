@@ -1,8 +1,14 @@
 package com.example.sis.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name="courses",
         uniqueConstraints=@UniqueConstraint(columnNames={"course_subject","course_code"}))
 public class Course {
@@ -20,12 +26,6 @@ public class Course {
 
     @Column(nullable=false)
     private Integer units;      // 3
-
-    public Course() {}
-    public Course(String subject, String code, String title, Integer units) {
-        this.courseSubject = subject; this.courseCode = code;
-        this.title = title; this.units = units;
-    }
 
     @Transient
     public String getDisplayCode(){ return courseSubject + " " + courseCode; }

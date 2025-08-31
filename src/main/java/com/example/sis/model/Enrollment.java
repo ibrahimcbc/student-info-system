@@ -1,9 +1,16 @@
 package com.example.sis.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.math.BigDecimal;
 
 @Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name="enrollments",
         uniqueConstraints=@UniqueConstraint(columnNames={"student_id","course_id","term_id"}))
 public class Enrollment {
@@ -28,9 +35,4 @@ public class Enrollment {
     @Column(name="included_in_gpa", nullable=false)
     private Boolean includedInGpa = Boolean.TRUE;
 
-    public Enrollment() {}
-    public Enrollment(Student s, Course c, Term t, String lg, BigDecimal ng, boolean inc){
-        this.student=s; this.course=c; this.term=t;
-        this.letterGrade=lg; this.numericGrade=ng; this.includedInGpa=inc;
-    }
 }
