@@ -1,13 +1,13 @@
 package com.example.sis.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
 @Data
 @NoArgsConstructor
+@Getter
+@Setter
 @Table(name="courses",
         uniqueConstraints=@UniqueConstraint(columnNames={"course_subject","course_code"}))
 public class Course {

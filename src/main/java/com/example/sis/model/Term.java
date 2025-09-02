@@ -1,13 +1,13 @@
 package com.example.sis.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
 @Data
 @NoArgsConstructor
+@Getter
+@Setter
 @Table(name = "terms",
 uniqueConstraints = @UniqueConstraint(columnNames = {"year","season"}))
 public class Term {
