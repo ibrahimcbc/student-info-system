@@ -24,15 +24,15 @@ public class Course {
     private String title;       // "Calculus II"
 
     @Column(nullable=false)
-    private Integer units;      // 3
+    private Integer credits;      // 3
 
     @Transient
     public String getDisplayCode(){ return courseSubject + " " + courseCode; }
 
-    public Course(String courseSubject, String courseCode, String title, Integer units) {
+    public Course(String courseSubject, String courseCode, String title, Integer credits) {
         this.courseSubject = courseSubject;
         this.courseCode = courseCode;
         this.title = title;
-        this.units = units;
+        this.credits = credits;
     }
 }
