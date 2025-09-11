@@ -10,6 +10,7 @@ public class GradeConverter {
             Map.entry("B+", bd(3.3)), Map.entry("B", bd(3.0)), Map.entry("B-", bd(2.7)),
             Map.entry("C+", bd(2.3)), Map.entry("C", bd(2.0)), Map.entry("C-", bd(1.7)),
             Map.entry("D+", bd(1.3)), Map.entry("D", bd(1.0)), Map.entry("F", bd(0.0)), Map.entry("W",bd(0.0)));
+
     public static BigDecimal toPoints(String letter){
         if(letter==null) return null;
         return MAP.get(letter.trim().toUpperCase());
