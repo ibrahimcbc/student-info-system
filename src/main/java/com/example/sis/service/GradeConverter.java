@@ -5,6 +5,7 @@ import java.util.Map;
 
 public class GradeConverter {
     private static BigDecimal bd(double d){ return BigDecimal.valueOf(d).setScale(2); }
+
     private static final Map<String, BigDecimal> MAP = Map.ofEntries(
             Map.entry("A+",bd(4.0)),Map.entry("A", bd(4.0)), Map.entry("A-", bd(3.7)),
             Map.entry("B+", bd(3.3)), Map.entry("B", bd(3.0)), Map.entry("B-", bd(2.7)),
